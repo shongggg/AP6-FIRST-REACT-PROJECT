@@ -1,0 +1,21 @@
+.overview-container {
+  height: auto;
+  padding: 60px 100px;
+}
+
+.overview-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.overview-content h1 {
+  color: #0d0d15;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.overview-content p {
+  color: #333;
+  line-height: 1.6;
+}

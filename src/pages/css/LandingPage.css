@@ -1,0 +1,72 @@
+.landing-container {
+  color: rgb(0, 0, 0);
+  height: auto;
+  padding: 60px 100px;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing-content {
+  margin-top: 100px;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid rgb(168, 168, 168);
+  object-fit: cover;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+.role {
+  font-size: 1rem;
+  color: #000000;
+  margin-top: 5px;
+}
+
+.social-icons {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icons a {
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #707070;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cv-btn,
+.contact-btn {
+  padding: 10px 20px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 25px;
+  background: none;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cv-btn:hover,
+.contact-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}

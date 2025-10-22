@@ -1,37 +1,126 @@
+/* ===== Base Navbar ===== */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 50px;
-  background-color: #007bff;
-  color: white;
+  background-color: #f8f9fa;
   position: sticky;
   top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-.navbar-logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+/* ===== Logo ===== */
+.navbar-logo img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  background: transparent;
 }
 
+/* ===== Desktop Links ===== */
 .navbar-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 25px;
+  transition: all 0.3s ease;
+}
+
+.navbar-links li {
+  margin: 0;
 }
 
 .navbar-links a {
-  color: white;
+  color: #000;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .navbar-links a:hover {
-  color: #e0e0e0;
+  color: #808080;
 }
 
-.navbar-logo img {
-  width: 80px;
-  height: 80px;
+/* ===== Hamburger ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background-color: #000;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ===== Hamburger Active Animation ===== */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ===== Mobile View ===== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 25px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide links initially */
+  .navbar-links {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    background-color: #ffffff;
+    width: 100%;
+    height: calc(100vh - 80px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    display: none;
+    opacity: 0;
+    transform: translateY(-10%);
+    transition: all 0.3s ease;
+  }
+
+  /* Show when active */
+  .navbar-links.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .navbar-links a {
+    font-size: 1.2rem;
+  }
+}
+
+/* ===== Smooth Slide Animation ===== */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
